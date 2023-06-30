@@ -4,7 +4,7 @@ sudo apt update && sudo apt upgrade -y
 echo "Update done." >> setup.log
 
 # apt
-sudo apt install git flatpak nodejs npm nodejs python3 p7zip-full p7zip-rar -y
+sudo apt install git virtualbox virtualbox-guest-additions-iso virtualbox-guest-utils flatpak nodejs neofetch npm nodejs python3 p7zip-full p7zip-rar -y
 
 echo "Done with apt installations." >> setup.log
 
