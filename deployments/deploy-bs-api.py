@@ -53,7 +53,7 @@ def stop_and_remove_container():
 
 def start_new_container(image_name):
     print(f"Starting a new container '{CONTAINER_NAME}' with the image '{image_name}'...")
-    run_command(f"docker run -d -p 8014:8080 -e ODIN_CONN_STRING=$ODIN_CONN_STRING --name {CONTAINER_NAME} {image_name}")
+    run_command(f"docker run -d -p 8014:8080 -e BS_PGSQL_CONNECTION_STRING=\"$BS_PGSQL_CONNECTION_STRING\" -e BS_R2_ACCOUNT_ID=$BS_R2_ACCOUNT_ID -e BS_R2_BUCKET_NAME=$BS_R2_BUCKET_NAME -e BS_R2_SECRET_ACCESS_KEY=$BS_R2_SECRET_ACCESS_KEY -e BS_R2_ACCESS_KEY_ID=$BS_R2_ACCESS_KEY_ID -e BS_R2_SERVICE_URL=$BS_R2_SERVICE_URL -e BS_BP_API_KEY=$BS_BP_API_KEY  --name {CONTAINER_NAME} {image_name}")
 
 def read_version():
     """Read the current version number from the build-nr.txt file."""
